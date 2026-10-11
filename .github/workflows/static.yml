@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Links Spotify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #191414;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            background-color: #282828;
+            color: white;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1ed760;
+        }
+        
+        #result {
+            margin-top: 20px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Links Spotify</h1>
+        <input type="text" id="spotifyLink" placeholder="Cole o link do Spotify aqui">
+        <button onclick="generateLink()">Gerar Link</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateLink() {
+            const input = document.getElementById('spotifyLink').value;
+            if (input) {
+                // Simula a geração de um link mensal
+                const generatedLink = `https://open.spotify.com/track/${Math.random().toString(36).substring(7)}?si=monthly_link`;
+                document.getElementById('result').innerText = "Link Gerado: " + generatedLink;
+            } else {
+                alert("Por favor, insira um link válido");
+            }
+        }
+    </script>
+</body>
+</html>
